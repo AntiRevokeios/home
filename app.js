@@ -249,9 +249,6 @@ function closeLightbox() {
 // Link quảng cáo — thay bằng link affiliate của bạn
 const AD_URL = 'https://s.shopee.vn/1gI4HVwTJ2';
 
-// API wrap link gốc
-const API_PREFIX = 'https://vuotnhanh.com/st?api=e29bd46a-78cd-4c6a-a626-a28528f37040&url=';
-
 // Đã xem QC toàn trang chưa (1 lần duy nhất)
 let adWatched = false;
 
@@ -280,8 +277,7 @@ function handleItemDownload(e, itemId, type) {
             btn.title = 'Nhấn lại để tải';
         });
     } else {
-        const wrappedUrl = API_PREFIX + encodeURIComponent(item.download);
-        window.open(wrappedUrl, '_blank');
+        window.open(item.download, '_blank');
     }
 }
 
