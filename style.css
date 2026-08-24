@@ -1128,52 +1128,99 @@ a {
         display: flex;
     }
 
+    /* Hero nhỏ lại */
     .hero {
-        padding: 52px 0 40px;
+        padding: 36px 0 28px;
     }
 
     .hero-title {
-        font-size: 38px;
-        letter-spacing: -1.2px;
+        font-size: 30px;
+        letter-spacing: -1px;
     }
 
     .hero-subtitle {
-        font-size: 14.5px;
-        margin-bottom: 28px;
+        font-size: 13px;
+        margin-bottom: 20px;
     }
 
+    .hero-eyebrow {
+        font-size: 11px;
+        padding: 4px 11px;
+    }
+
+    /* DNS cards */
     .dns-cards {
-        margin-top: 24px;
+        margin-top: 16px;
+        gap: 7px;
     }
 
+    .dns-card {
+        padding: 11px 13px;
+        gap: 11px;
+    }
+
+    .dns-card-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+    }
+
+    .dns-card-icon i {
+        width: 16px;
+        height: 16px;
+    }
+
+    .dns-card-name {
+        font-size: 13px;
+    }
+
+    .dns-card-desc {
+        font-size: 11px;
+    }
+
+    /* Info cards */
     .info-cards {
-        margin-top: 8px;
+        margin-top: 7px;
+        gap: 7px;
+    }
+
+    .info-card {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .info-card-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+    }
+
+    .info-card-icon i {
+        width: 14px;
+        height: 14px;
+    }
+
+    .info-card-title {
+        font-size: 12px;
     }
 
     .info-card-desc {
-        font-size: 11.5px;
+        font-size: 11px;
     }
 
-    .dns-download-btn span {
-        display: none;
-    }
-
-    .dns-download-btn {
-        padding: 9px 11px;
-        border-radius: 50%;
-    }
-
+    /* Search */
     .search-box input {
-        height: 46px;
-        font-size: 14px;
+        height: 42px;
+        font-size: 13.5px;
     }
 
     .container {
-        padding: 0 14px;
+        padding: 0 12px;
     }
 
+    /* Games grid */
     .games-grid {
-        gap: 7px;
+        gap: 6px;
     }
 
     .filter-content {
@@ -1181,11 +1228,35 @@ a {
     }
 
     .game-card {
-        padding: 12px 14px;
-        gap: 12px;
-        border-radius: 14px;
+        padding: 10px 12px;
+        gap: 10px;
+        border-radius: 13px;
     }
 
+    .game-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+    }
+
+    .game-name {
+        font-size: 13px;
+    }
+
+    .game-meta {
+        font-size: 11px;
+    }
+
+    .meta-cert {
+        font-size: 10px;
+        padding: 1px 5px;
+    }
+
+    .meta-date {
+        font-size: 10.5px;
+    }
+
+    /* Action buttons — ẩn chữ eSign, giữ chữ Cert */
     .action-btn span {
         display: none;
     }
@@ -1195,36 +1266,21 @@ a {
     }
 
     .action-btn {
-        padding: 7px 9px;
-        border-radius: 8px;
-    }
-
-    .action-btn.btn-cert {
-        padding: 7px 11px;
-    }
-
-    .game-icon {
-        width: 50px;
-        height: 50px;
-        border-radius: 11px;
-    }
-
-    .game-name {
-        font-size: 14px;
-    }
-
-    .game-meta {
+        padding: 6px 8px;
+        border-radius: 7px;
         font-size: 11.5px;
     }
 
-    .download-btn {
-        width: 33px;
-        height: 33px;
+    .action-btn.btn-cert {
+        padding: 6px 10px;
     }
 
-    .download-btn i {
-        font-size: 15px;
-        line-height: 1;
+    .action-btn i {
+        font-size: 12px;
+    }
+
+    .card-actions {
+        gap: 5px;
     }
 }
 

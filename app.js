@@ -135,18 +135,17 @@ function renderItemCard(item) {
             <div class="game-details">
                 <div class="game-name">${item.name}</div>
                 <div class="game-meta">
-                    <span class="type-badge type-ios"><i class="bi bi-apple"></i> iOS</span>
                     <span class="meta-cert">${item.certName || 'Cert'}</span>
                     <span class="meta-dot">·</span>
                     <span class="meta-date">${formattedDate}</span>
                 </div>
             </div>
             <div class="card-actions">
-                <button class="action-btn btn-esign" onclick="handleItemDownload(event, '${item.id}', 'esign')" aria-label="Tải eSign ${item.version}">
+                <button class="action-btn btn-esign" onclick="handleItemDownload(event, '${item.id}', 'esign')" aria-label="Tải eSign">
                     <i class="bi bi-cloud-arrow-down"></i>
                     <span>eSign</span>
                 </button>
-                <button class="action-btn btn-cert" onclick="handleItemDownload(event, '${item.id}', 'cert')" aria-label="Tải Cert ${item.version}">
+                <button class="action-btn btn-cert" onclick="handleItemDownload(event, '${item.id}', 'cert')" aria-label="Tải Cert">
                     <i class="bi bi-patch-check"></i>
                     <span>Cert</span>
                 </button>
