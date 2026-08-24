@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS Chặn Thu Hồi Chứng Chỉ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-eyebrow">
+                <i data-lucide="shield-check"></i>
+                DNS Chặn Thu Hồi Chứng Chỉ
+            </div>
+            <h1 class="hero-title">Anti Revoke</h1>
+            </p>
+
+            <!-- DNS Profile Cards -->
+            <div class="dns-cards" id="dnsCards"></div>
+
+            <!-- Info Cards -->
+            <div class="info-cards">
+                <a class="info-card info-trollstore" href="https://ios.cfw.guide/installing-trollstore-trollinstallerx/" target="_blank"
+                    rel="noopener">
+                    <div class="info-card-icon"><i data-lucide="infinity"></i></div>
+                    <div class="info-card-body">
+                        <div class="info-card-title">Chứng chỉ vĩnh viễn <i data-lucide="external-link"
+                                class="info-ext"></i></div>
+                        <div class="info-card-desc">Thiết bị iOS 14 – 16.7 (một số máy) có thể cài
+                            <strong>TrollStore</strong> — chứng chỉ không bao giờ hết hạn, không cần DNS.
+                        </div>
+                    </div>
+                </a>
+                <a class="info-card info-sidestore" href="https://sidestore.io" target="_blank" rel="noopener">
+                    <div class="info-card-icon"><i data-lucide="monitor"></i></div>
+                    <div class="info-card-body">
+                        <div class="info-card-title">Cài qua SideStore <i data-lucide="external-link"
+                                class="info-ext"></i></div>
+                        <div class="info-card-desc">Tất cả iOS đều cài được <strong>SideStore</strong> — cần máy tính
+                            lần đầu, sau đó tự gia hạn 7 ngày/lần qua Wi-Fi.</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter / Sort -->
+    <section class="filter-section">
+        <div class="container">
+
+            <div class="filter-content">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">Mới Nhất</button>
+                </div>
+                <div class="sort-dropdown" style="display:none">
+                    <button class="sort-btn" id="sortBtn">
+                        <i data-lucide="arrow-up-down"></i>
+                        <span id="sortLabel">Mới nhất</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="sort-menu" id="sortMenu">
+                        <button class="sort-option active" data-sort="latest">Mới nhất</button>
+                        <button class="sort-option" data-sort="oldest">Cũ nhất</button>
+                        <button class="sort-option" data-sort="a-z">A–Z</button>
+                        <button class="sort-option" data-sort="z-a">Z–A</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- eSign Versions -->
+    <section class="games-section">
+        <div class="container">
+            <div class="games-grid" id="gamesGrid"></div>
+            <div class="no-results" id="noResults" style="display:none;">
+                <i data-lucide="search-x"></i>
+                <p>Không tìm thấy phiên bản nào.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>DNS profile chặn thu hồi chứng chỉ eSign — cập nhật liên tục.</p>
+                <p class="copyright">© 2026 eSign DNS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal (reserved) -->
+    <div class="modal" id="gameModal">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox (reserved) -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+        <button class="lightbox-close" id="lightboxClose">
+            <i data-lucide="x"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

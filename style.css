@@ -1,0 +1,1259 @@
+/* ========================================
+   RESET & BASE
+   ======================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0f0f11;
+    --surface: #18181b;
+    --surface-2: #1f1f23;
+    --border: #2a2a2f;
+    --border-light: #333338;
+
+    --text-1: #f4f4f5;
+    --text-2: #a1a1aa;
+    --text-3: #71717a;
+
+    --accent: #6366f1;
+    /* indigo */
+    --accent-2: #818cf8;
+    --accent-bg: rgba(99, 102, 241, 0.12);
+    --accent-bg-hover: rgba(99, 102, 241, 0.2);
+
+    --green: #22c55e;
+    --green-bg: rgba(34, 197, 94, 0.10);
+
+    --radius-sm: 10px;
+    --radius: 16px;
+    --radius-lg: 22px;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 0 1px var(--border), 0 8px 32px rgba(99, 102, 241, 0.15);
+
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --t: 0.2s;
+    --t-slow: 0.35s;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text-1);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-light);
+    border-radius: 99px;
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.header {
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 15, 17, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    color: var(--text-1);
+}
+
+.logo i {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-2);
+}
+
+.nav {
+    display: flex;
+    gap: 4px;
+}
+
+.nav-link {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-2);
+    padding: 6px 13px;
+    border-radius: 8px;
+    transition: all var(--t);
+}
+
+.nav-link:hover {
+    color: var(--text-1);
+    background: var(--surface-2);
+}
+
+.nav-link.active {
+    color: var(--text-1);
+    background: var(--surface-2);
+}
+
+.menu-icon {
+    display: none;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: var(--text-2);
+    transition: all var(--t);
+}
+
+.menu-icon:hover {
+    background: var(--surface-2);
+    color: var(--text-1);
+}
+
+.menu-icon i {
+    width: 20px;
+    height: 20px;
+}
+
+/* ========================================
+   HERO
+   ======================================== */
+
+.hero {
+    padding: 80px 0 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow background đằng sau hero */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--accent-bg);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: var(--accent-2);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 99px;
+    margin-bottom: 24px;
+}
+
+.hero-eyebrow i {
+    width: 13px;
+    height: 13px;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin-bottom: 16px;
+    color: var(--text-1);
+
+    background: linear-gradient(135deg, #f4f4f5 30%, #a1a1aa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 16.5px;
+    color: var(--text-2);
+    margin-bottom: 40px;
+    font-weight: 400;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Search */
+.search-box {
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-box i[data-lucide] {
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 17px;
+    height: 17px;
+    color: var(--text-3);
+    pointer-events: none;
+}
+
+.search-box input {
+    width: 100%;
+    height: 50px;
+    padding: 0 18px 0 48px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    font-size: 14.5px;
+    font-family: inherit;
+    background: var(--surface);
+    color: var(--text-1);
+    transition: all var(--t);
+    box-shadow: var(--shadow-sm);
+}
+
+.search-box input::placeholder {
+    color: var(--text-3);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* ========================================
+   DNS PROFILE CARDS
+   ======================================== */
+
+.dns-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 560px;
+    margin: 32px auto 0;
+}
+
+.dns-card {
+    background: var(--surface);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+    transition:
+        background var(--t),
+        border-color var(--t),
+        box-shadow var(--t-slow) var(--ease-out);
+}
+
+.dns-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top left, rgba(99, 102, 241, 0.07) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.dns-card:hover {
+    background: var(--surface-2);
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.15), var(--shadow-md);
+}
+
+.dns-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--accent-bg);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--accent-2);
+}
+
+.dns-card-icon i {
+    width: 20px;
+    height: 20px;
+}
+
+.dns-card-info {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.dns-card-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-1);
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: -0.15px;
+}
+
+.dns-tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 99px;
+    background: var(--accent-bg);
+    color: var(--accent-2);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.dns-card-desc {
+    font-size: 12px;
+    color: var(--text-3);
+    line-height: 1.45;
+}
+
+.dns-download-btn {
+    /* inherits from .action-btn + .btn-cert */
+}
+
+/* ========================================
+   INFO CARDS (bên dưới DNS cards)
+   ======================================== */
+
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 560px;
+    margin: 10px auto 0;
+}
+
+.info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 13px 15px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color var(--t), background var(--t), transform var(--t);
+}
+
+.info-card:hover {
+    background: var(--surface-2);
+    transform: translateX(3px);
+}
+
+/* màu accent border trái theo loại */
+.info-trollstore {
+    border-left: 3px solid #a855f7;
+}
+
+.info-sidestore {
+    border-left: 3px solid var(--accent);
+}
+
+.info-sideloader {
+    border-left: 3px solid #22c55e;
+}
+
+.info-card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.info-trollstore .info-card-icon {
+    background: rgba(168, 85, 247, 0.12);
+    color: #a855f7;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.info-sidestore .info-card-icon {
+    background: var(--accent-bg);
+    color: var(--accent-2);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.info-sideloader .info-card-icon {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.info-card-icon i {
+    width: 17px;
+    height: 17px;
+}
+
+.info-card-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.info-card-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-1);
+    margin-bottom: 3px;
+    letter-spacing: -0.1px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info-ext {
+    width: 11px;
+    height: 11px;
+    color: var(--text-3);
+    flex-shrink: 0;
+}
+
+.info-card-desc {
+    font-size: 12px;
+    color: var(--text-3);
+    line-height: 1.5;
+}
+
+.info-card-desc strong {
+    color: var(--text-2);
+    font-weight: 600;
+}
+
+.filter-section {
+    padding: 16px 0 8px;
+}
+
+/* Search khi nằm trong filter section */
+.filter-search {
+    max-width: 680px;
+    margin: 0 auto 10px;
+}
+
+.filter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 4px;
+}
+
+.filter-tab {
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-3);
+    border-radius: 8px;
+    transition: all var(--t);
+}
+
+.filter-tab:hover {
+    background: var(--surface-2);
+    color: var(--text-2);
+}
+
+.filter-tab.active {
+    background: var(--surface-2);
+    color: var(--text-1);
+    font-weight: 600;
+}
+
+.sort-dropdown {
+    position: relative;
+}
+
+.sort-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 13px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-2);
+    border: 1px solid var(--border-light);
+    border-radius: 9px;
+    background: var(--surface);
+    transition: all var(--t);
+}
+
+.sort-btn:hover {
+    border-color: var(--border-light);
+    color: var(--text-1);
+    background: var(--surface-2);
+}
+
+.sort-btn i {
+    width: 13px;
+    height: 13px;
+}
+
+.sort-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: var(--surface-2);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    min-width: 150px;
+    padding: 4px;
+    display: none;
+    z-index: 20;
+}
+
+.sort-menu.active {
+    display: block;
+}
+
+.sort-option {
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 13.5px;
+    color: var(--text-2);
+    border-radius: 7px;
+    transition: all var(--t);
+}
+
+.sort-option:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-1);
+}
+
+.sort-option.active {
+    color: var(--text-1);
+    font-weight: 600;
+}
+
+/* ========================================
+   GAMES SECTION
+   ======================================== */
+
+.games-section {
+    padding: 20px 0 80px;
+}
+
+.games-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   GAME CARD
+   ======================================== */
+
+.game-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    position: relative;
+    transition:
+        background var(--t),
+        border-color var(--t),
+        transform var(--t-slow) var(--ease-out),
+        box-shadow var(--t-slow) var(--ease-out);
+    overflow: hidden;
+}
+
+/* Shimmer line bên trái khi hover */
+.game-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 60%;
+    width: 2px;
+    background: var(--accent);
+    border-radius: 0 2px 2px 0;
+    opacity: 0;
+    transition: opacity var(--t);
+}
+
+.game-card:hover {
+    background: var(--surface-2);
+    border-color: var(--border-light);
+    transform: translateX(3px);
+    box-shadow: var(--shadow-md);
+}
+
+.game-card:hover::before {
+    opacity: 1;
+}
+
+.game-card:active {
+    transform: translateX(1px) scale(0.995);
+}
+
+/* Icon */
+.game-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 13px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-light);
+    transition: transform var(--t-slow) var(--ease-spring);
+}
+
+.game-card:hover .game-icon {
+    transform: scale(1.05) rotate(-1deg);
+}
+
+.game-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Details */
+.game-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.game-name {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--text-1);
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: -0.15px;
+    transition: color var(--t);
+}
+
+.game-card:hover .game-name {
+    color: #fff;
+}
+
+.game-meta {
+    font-size: 12px;
+    color: var(--text-3);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.game-meta .dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--text-3);
+    flex-shrink: 0;
+}
+
+.meta-version {
+    color: var(--text-3);
+    font-size: 12px;
+}
+
+.meta-cert {
+    font-size: 11px;
+    font-weight: 600;
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    padding: 1px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.2px;
+}
+
+.meta-dot {
+    color: var(--text-3);
+    font-size: 11px;
+}
+
+.meta-date {
+    color: var(--text-3);
+    font-size: 11.5px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Platform badges */
+.type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 5px;
+    letter-spacing: 0.2px;
+    line-height: 1.4;
+}
+
+.type-apk {
+    background: rgba(61, 220, 132, 0.12);
+    color: #3ddc84;
+    border: 1px solid rgba(61, 220, 132, 0.2);
+}
+
+.type-ios {
+    background: rgba(170, 170, 175, 0.12);
+    color: #aaaaaf;
+    border: 1px solid rgba(170, 170, 175, 0.2);
+}
+
+.type-badge i {
+    font-size: 11px;
+}
+
+/* Download button (legacy - giữ lại) */
+.download-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-bg);
+    color: var(--accent-2);
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all var(--t) var(--ease-spring);
+}
+
+.download-btn:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    transform: scale(1.12);
+    box-shadow: 0 0 16px rgba(99, 102, 241, 0.45);
+}
+
+.download-btn:active {
+    transform: scale(0.93);
+}
+
+.download-btn i {
+    font-size: 17px;
+    line-height: 1;
+}
+
+/* Card actions — 2 nút eSign + Cert */
+.card-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 11px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    transition: all var(--t) var(--ease-spring);
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+
+.action-btn i {
+    font-size: 13px;
+    line-height: 1;
+}
+
+/* eSign button — indigo */
+.btn-esign {
+    background: var(--accent-bg);
+    color: var(--accent-2);
+    border-color: rgba(99, 102, 241, 0.25);
+}
+
+.btn-esign:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    transform: scale(1.05);
+    box-shadow: 0 0 14px rgba(99, 102, 241, 0.4);
+}
+
+.btn-esign:active {
+    transform: scale(0.95);
+}
+
+/* Cert button — green */
+.btn-cert {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.25);
+}
+
+.btn-cert:hover {
+    background: #22c55e;
+    color: #fff;
+    border-color: #22c55e;
+    transform: scale(1.05);
+    box-shadow: 0 0 14px rgba(34, 197, 94, 0.4);
+}
+
+.btn-cert:active {
+    transform: scale(0.95);
+}
+
+/* Ready state (sau khi xem QC) */
+.action-btn.ready {
+    animation: pulse-green 1.5s ease infinite;
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.action-btn.ready:hover {
+    background: #22c55e;
+    color: #fff;
+    border-color: #22c55e;
+    box-shadow: 0 0 14px rgba(34, 197, 94, 0.45);
+    transform: scale(1.05);
+    animation: none;
+}
+
+@keyframes pulse-green {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+    }
+}
+
+/* ========================================
+   NO RESULTS
+   ======================================== */
+
+.no-results {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.no-results i {
+    width: 44px;
+    height: 44px;
+    color: var(--text-3);
+    margin: 0 auto 14px;
+}
+
+.no-results p {
+    font-size: 15px;
+    color: var(--text-2);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+    text-align: center;
+    background: var(--surface);
+}
+
+.footer-content h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+}
+
+.footer-content p {
+    font-size: 13.5px;
+    color: var(--text-2);
+    margin-bottom: 4px;
+}
+
+.copyright {
+    font-size: 12.5px;
+    color: var(--text-3);
+    margin-top: 10px !important;
+}
+
+/* ========================================
+   MODAL (giữ lại cho sau nếu cần)
+   ======================================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.modal-content {
+    position: relative;
+    background: var(--surface-2);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    animation: modalIn 0.3s var(--ease-out);
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 50%;
+    z-index: 10;
+    color: var(--text-2);
+    transition: all var(--t);
+}
+
+.modal-close:hover {
+    background: var(--surface-2);
+    color: var(--text-1);
+}
+
+.modal-close i {
+    width: 16px;
+    height: 16px;
+}
+
+.modal-body {
+    padding: 24px 26px 28px;
+}
+
+/* ========================================
+   LIGHTBOX
+   ======================================== */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.94);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    z-index: 10;
+    transition: background var(--t);
+    color: white;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.lightbox-close i {
+    width: 20px;
+    height: 20px;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .hero {
+        padding: 52px 0 40px;
+    }
+
+    .hero-title {
+        font-size: 38px;
+        letter-spacing: -1.2px;
+    }
+
+    .hero-subtitle {
+        font-size: 14.5px;
+        margin-bottom: 28px;
+    }
+
+    .dns-cards {
+        margin-top: 24px;
+    }
+
+    .info-cards {
+        margin-top: 8px;
+    }
+
+    .info-card-desc {
+        font-size: 11.5px;
+    }
+
+    .dns-download-btn span {
+        display: none;
+    }
+
+    .dns-download-btn {
+        padding: 9px 11px;
+        border-radius: 50%;
+    }
+
+    .search-box input {
+        height: 46px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 14px;
+    }
+
+    .games-grid {
+        gap: 7px;
+    }
+
+    .filter-content {
+        max-width: 100%;
+    }
+
+    .game-card {
+        padding: 12px 14px;
+        gap: 12px;
+        border-radius: 14px;
+    }
+
+    .action-btn span {
+        display: none;
+    }
+
+    .action-btn.btn-cert span {
+        display: inline;
+    }
+
+    .action-btn {
+        padding: 7px 9px;
+        border-radius: 8px;
+    }
+
+    .action-btn.btn-cert {
+        padding: 7px 11px;
+    }
+
+    .game-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 11px;
+    }
+
+    .game-name {
+        font-size: 14px;
+    }
+
+    .game-meta {
+        font-size: 11.5px;
+    }
+
+    .download-btn {
+        width: 33px;
+        height: 33px;
+    }
+
+    .download-btn i {
+        font-size: 15px;
+        line-height: 1;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .hero-eyebrow {
+        font-size: 11px;
+    }
+
+    .game-card {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .game-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+    }
+
+    .game-name {
+        font-size: 13px;
+    }
+
+    .download-btn {
+        width: 31px;
+        height: 31px;
+    }
+}
