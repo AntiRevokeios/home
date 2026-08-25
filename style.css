@@ -1256,12 +1256,8 @@ a {
         font-size: 10.5px;
     }
 
-    /* Action buttons — ẩn chữ eSign, giữ chữ Cert */
+    /* Action buttons — giữ chữ cả 2 nút */
     .action-btn span {
-        display: none;
-    }
-
-    .action-btn.btn-cert span {
         display: inline;
     }
 

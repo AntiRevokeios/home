@@ -18,7 +18,7 @@ let filteredItems = [...items];
 // ========================================
 function initApp() {
     renderDnsCards();
-    renderItems(items);
+    applyFilters();
     setupEventListeners();
 }
 

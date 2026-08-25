@@ -74,6 +74,18 @@ const items = [
         cert: certZipUrl("National_Oilwell")
     },
 
+    // ── National Oilwell Varco ─────────────
+    {
+        id: "esign-nationaloilwell-varco",
+        name: "eSign National Oilwell Varco",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("National_Oilwell_Varco"),
+        certName: "National Oilwell Varco",
+        cert: certZipUrl("National_Oilwell_Varco")
+    },
+
     // ── Commission Elections ───────────────
     {
         id: "esign-commission",
@@ -84,6 +96,18 @@ const items = [
         download: certInstallUrl("Commission_on_Elections"),
         certName: "Commission Elections",
         cert: certZipUrl("Commission_on_Elections")
+    },
+
+    // ── Commision Elections (v2) ───────────
+    {
+        id: "esign-commision-v2",
+        name: "eSign Commision Elections V2",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("Commision_on_Elections"),
+        certName: "Commision Elections",
+        cert: certZipUrl("Commision_on_Elections")
     },
 
     // ── HDFC Bank ──────────────────────────
@@ -108,6 +132,136 @@ const items = [
         download: certInstallUrl("VIETNAM_AIRLINES"),
         certName: "Vietnam Airlines",
         cert: certZipUrl("VIETNAM_AIRLINES")
+    },
+
+    // ── Viet Nam Rubber ────────────────────
+    {
+        id: "esign-vnrubber",
+        name: "eSign Viet Nam Rubber",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("Viet_Nam_Rubber"),
+        certName: "Viet Nam Rubber",
+        cert: certZipUrl("Viet_Nam_Rubber")
+    },
+
+    // ── Qingdao Rural Commercial Bank ──────
+    {
+        id: "esign-qingdao",
+        name: "eSign Qingdao Rural Bank",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("Qingdao_Rural_Commercial_Bank"),
+        certName: "Qingdao Rural Bank",
+        cert: certZipUrl("Qingdao_Rural_Commercial_Bank")
+    },
+
+    // ── BOC International ──────────────────
+    {
+        id: "esign-boc1",
+        name: "eSign BOC International 1",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("BOC1_International_China"),
+        certName: "BOC International 1",
+        cert: certZipUrl("BOC1_International_China")
+    },
+    {
+        id: "esign-boc2",
+        name: "eSign BOC International 2",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("BOC2_International_China"),
+        certName: "BOC International 2",
+        cert: certZipUrl("BOC2_International_China")
+    },
+    {
+        id: "esign-boc3",
+        name: "eSign BOC International 3",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("BOC_3_International_China"),
+        certName: "BOC International 3",
+        cert: certZipUrl("BOC_3_International_China")
+    },
+
+    // ── PowerChina ─────────────────────────
+    {
+        id: "esign-powerchina",
+        name: "eSign PowerChina",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("PowerChina_International_Group"),
+        certName: "PowerChina",
+        cert: certZipUrl("PowerChina_International_Group")
+    },
+    {
+        id: "esign-powerchina-1",
+        name: "eSign PowerChina 1",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("PowerChina_1_International_Group"),
+        certName: "PowerChina 1",
+        cert: certZipUrl("PowerChina_1_International_Group")
+    },
+    {
+        id: "esign-powerchina-2",
+        name: "eSign PowerChina 2",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("PowerChina_2_International_Group"),
+        certName: "PowerChina 2",
+        cert: certZipUrl("PowerChina_2_International_Group")
+    },
+    {
+        id: "esign-powerchina-3",
+        name: "eSign PowerChina 3",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("PowerChina_3_International_Group"),
+        certName: "PowerChina 3",
+        cert: certZipUrl("PowerChina_3_International_Group")
+    },
+    {
+        id: "esign-powerchina-4",
+        name: "eSign PowerChina 4",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("PowerChina_4_International_Group"),
+        certName: "PowerChina 4",
+        cert: certZipUrl("PowerChina_4_International_Group")
+    },
+
+    // ── Jiangsu Simcere ────────────────────
+    {
+        id: "esign-simcere",
+        name: "eSign Jiang Simcere",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("Jiang_Simcere"),
+        certName: "Jiang Simcere",
+        cert: certZipUrl("Jiang_Simcere")
+    },
+    {
+        id: "esign-simcere-1",
+        name: "eSign Jiangsu Simcere 1",
+        updated: "2026-08-23",
+        type: "ios",
+        icon: ICON,
+        download: certInstallUrl("Jiangsu_Simcere_1"),
+        certName: "Jiangsu Simcere 1",
+        cert: certZipUrl("Jiangsu_Simcere_1")
     },
 
     // ── GAC Toyota Motor ───────────────────
