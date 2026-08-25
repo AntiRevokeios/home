@@ -943,6 +943,56 @@ a {
 }
 
 /* ========================================
+   DISCLAIMER
+   ======================================== */
+
+.disclaimer-section {
+    padding: 20px 0 4px;
+}
+
+.disclaimer-box {
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+    background: rgba(234, 179, 8, 0.06);
+    border: 1px solid rgba(234, 179, 8, 0.2);
+    border-left: 3px solid #eab308;
+    border-radius: var(--radius);
+    padding: 14px 16px;
+}
+
+.disclaimer-icon {
+    flex-shrink: 0;
+    color: #eab308;
+    margin-top: 1px;
+}
+
+.disclaimer-icon i {
+    width: 17px;
+    height: 17px;
+}
+
+.disclaimer-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #eab308;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 5px;
+}
+
+.disclaimer-text {
+    font-size: 11.5px;
+    color: var(--text-3);
+    line-height: 1.6;
+}
+
+.disclaimer-text strong {
+    color: #fbbf24;
+    font-weight: 700;
+}
+
+/* ========================================
    FOOTER
    ======================================== */
 
