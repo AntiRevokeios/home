@@ -247,7 +247,7 @@ function closeLightbox() {
 }
 
 // Link quảng cáo — thay bằng link affiliate của bạn
-const AD_URL = 'https://s.shopee.vn/1gI4HVwTJ2';
+const AD_URL = '#';
 
 // Đã xem QC toàn trang chưa (1 lần duy nhất)
 let adWatched = false;
